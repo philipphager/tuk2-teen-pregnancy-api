@@ -28,12 +28,17 @@ def execute_query(query):
     cursor.execute(query)
 
     description = cursor.description
-    description = [column[0] for column in description]
+    columns = [column[0] for column in description]
+    rows = cursor.fetchall()
+    data = []
 
-    return {
-        'data': cursor.fetchall(),
-        'schema': description
-    }
+    for row in rows:
+        o = {}
+        for i, column in enumerate(columns):
+            o[column] = row[i]
+        data.append(o)
+
+    return data
 
 
 def execute_paginated_query(query, offset, limit):

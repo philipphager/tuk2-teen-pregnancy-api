@@ -6,7 +6,7 @@ worldwide_controller = Blueprint('world', __name__)
 
 
 @worldwide_controller.route('/')
-def average_bmi():
+def birth_rate_worldwide():
     start_year = request.args.get('startYear', 1970, int)
     end_year = request.args.get('endYear', 2017, int)
     countries = request.args.get('countries') == []

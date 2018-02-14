@@ -8,5 +8,5 @@ usa_controller = Blueprint('usa', __name__)
 @usa_controller.route('/')
 def birth_rate_usa_per_year():
     year = request.args.get('year', 1995, int)
-    bmi = get_teen_pregnancy_by_state(year)
-    return jsonify(bmi)
+    data = get_teen_pregnancy_by_state(year)
+    return jsonify(data)

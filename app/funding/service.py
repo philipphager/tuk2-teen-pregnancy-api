@@ -11,10 +11,12 @@ def get_funding_by_state(year):
         data = execute_query(query)
         add_to_cache(query, data)
 
-    return 'TODO'
+    return data
 
 
 def get_query(year):
     return f'''
-        
+        SELECT *
+        FROM FundingAndBirthRatesPerState
+        WHERE "year" = {year};
     '''

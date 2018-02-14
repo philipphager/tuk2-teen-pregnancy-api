@@ -7,6 +7,6 @@ funding_controller = Blueprint('funding', __name__)
 
 @funding_controller.route('/')
 def funding_per_state_and_year():
-    year = request.args.get('year', 1995, int)
+    year = request.args.get('year', 2003, int)
     data = get_funding_by_state(year)
     return jsonify(data)

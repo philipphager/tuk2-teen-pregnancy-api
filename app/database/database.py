@@ -28,7 +28,7 @@ def execute_query(query):
     cursor.execute(query)
 
     description = cursor.description
-    columns = [column[0] for column in description]
+    columns = [str(column[0]).lower() for column in description]
     rows = cursor.fetchall()
     data = []
 

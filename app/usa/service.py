@@ -16,7 +16,7 @@ def get_teen_pregnancy_by_state(year):
 
 def get_query(year):
     return f'''
-         SELECT "State Code" AS "id", "Year" AS "year", "BirthRate" AS "birthRate"
+         SELECT *
          FROM BirthsPerYearAndState
-         WHERE "Year" = '{year}'
+         WHERE "year" = '{year}'
     '''

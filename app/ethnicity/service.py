@@ -11,12 +11,12 @@ def get_teen_pregnancy_by_ethnicity(year):
         data = execute_query(query)
         add_to_cache(query, data)
 
-    return 'TODO'
+    return data
 
 
 def get_query(year):
     return f'''
-        SELECT "State Code" AS "id", "Year" AS "year", "BirthRate" AS "birthRate"
-         FROM BirthsPerYearAndState
-         WHERE "Year" = '{year}'
+        SELECT *
+        FROM BirthsPerYearAndStateAndRace
+        WHERE "year" = {year}
     '''

@@ -15,9 +15,16 @@ def get_teen_pregnancy_world_wide(start_year, end_year, countries):
 
 
 def get_query(start_year, end_year, countries):
+    county_selector = ''
+
+    for country in countries:
+        county_selector += f'\"{country}\",'
+
     return f'''
-        SELECT * 
-        FROM TeenRatesWorldwide
-        WHERE "Year" >= TO_DATE('{start_year}', 'YYYY')
-        AND "Year" <= TO_DATE('{end_year}', 'YYYY')
+        SELECT
+        {county_selector} 
+        "Year" as "year"
+        FROM "TeenPregnanciesWorldwide"
+        WHERE "Year" >= {start_year}
+        AND "Year" <= {end_year}
     '''

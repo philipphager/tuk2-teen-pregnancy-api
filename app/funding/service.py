@@ -12,8 +12,12 @@ def get_funding_by_state(year):
         add_to_cache(query, data)
 
     for d in data:
-        d['abstinence rate'] = round(d['abstinence only'] / d['total'], 3) * 100
-        d['comprehensive rate'] = round(d['comprehensive sex education'] / d['total'], 3) * 100
+        if d['total'] != 0:
+            d['abstinence rate'] = round(d['abstinence only'] / d['total'], 3) * 100
+            d['comprehensive rate'] = round(d['comprehensive sex education'] / d['total'], 3) * 100
+        else:
+            d['abstinence rate'] = 0
+            d['comprehensive rate'] = 0
 
     return data
 

@@ -18,7 +18,7 @@ def collect_by_country(data):
     countries = {}
 
     for year in data:
-        for key, value in year.items():
+        for key, value in year:
             if key in countries:
                 countries[key].append(value)
             else:

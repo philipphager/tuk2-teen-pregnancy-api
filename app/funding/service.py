@@ -18,5 +18,6 @@ def get_query(year):
     return f'''
         SELECT *
         FROM FundingAndBirthRatesPerState
-        WHERE "year" = {year};
+        WHERE "year" = {year}
+        ORDER BY "fips";
     '''

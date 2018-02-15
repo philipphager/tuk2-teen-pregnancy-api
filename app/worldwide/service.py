@@ -11,7 +11,20 @@ def get_teen_pregnancy_world_wide(start_year, end_year, countries):
         data = execute_query(query)
         add_to_cache(query, data)
 
-    return data
+    return collect_by_country(data)
+
+
+def collect_by_country(data):
+    countries = {}
+
+    for year in data:
+        for key, value in year.items():
+            if key in countries:
+                countries[key].append(value)
+            else:
+                countries[key] = []
+
+    return countries
 
 
 def get_query(start_year, end_year, countries):

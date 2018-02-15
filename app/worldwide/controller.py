@@ -7,7 +7,7 @@ worldwide_controller = Blueprint('world', __name__)
 
 @worldwide_controller.route('/')
 def birth_rate_worldwide():
-    default_countries = ['United States', 'United Kingdom', 'European Union', 'Germany', 'World']
+    default_countries = ['United States', 'European Union', 'Germany', 'World']
     start_year = request.args.get('startYear', 1970, int)
     end_year = request.args.get('endYear', 2017, int)
     countries = request.args.getlist('country', str)

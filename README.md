@@ -15,5 +15,6 @@ server environment, each of the following commands has to be executed using sudo
 2. Ensure you have [python3 and pip3](https://www.python.org/) installed. Check by running `python3 --version` and `pip3 --version`.
 3. Make sure [pipenv](https://github.com/kennethreitz/pipenv) is installed, by running `pip3 install pipenv` and `pipenv --version`. For more information on pipenv lookup ["The Hitchhiker's Guide to Python"](http://docs.python-guide.org/en/latest/dev/virtualenvs/) and ["How to manage your Python projects with Pipenv"](https://robots.thoughtbot.com/how-to-manage-your-python-projects-with-pipenv).
 4. Create a new virtual environment and install all project dependencies by running `pipenv install --python 3.6`. The argument `--python 3.6` is needed as this project relies upon python 3.6.
-5. To enter your virtual environment, run `pipenv shell`.
-6. Start the server by running `python3 run.py`.
+5. Make sure that you insert the address and login credentials for the database in the file `/env/config.py`.
+6. To enter your virtual environment, run `pipenv shell`.
+7. Start the server by running `python3 run.py`.
